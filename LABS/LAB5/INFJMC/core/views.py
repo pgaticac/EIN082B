@@ -9,19 +9,10 @@ menu += "</ul>"
 
 
 def home(request):
-    
-   # titulo = "<h1>Informática USM</h1>"
-   # contenido = "<hr><p>Lorem ipsum dolor sit amet."
-   # html = titulo + menu + contenido
-   # return HttpResponse(html)
-   return render(request,'core/home.html')
+    return render(request,'core/index.html')
 
 def carreras(request):
-    titulo = "<h1>Carreras</h1>"
-    contenido = "<hr><p>Lorem ipsum dolor sit amet."
-    html = titulo + menu + contenido
-    return HttpResponse(html)
+    return render(request,'core/carreras.html')
 
 def docentes(request):
-    titulo = "<h1>Docentes</h1>"
-    return HttpResponse(titulo)
+    return render(request,'core/docentes.html')
