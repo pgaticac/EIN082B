@@ -1,0 +1,25 @@
+<nav class="col-2 bg-dark" id="sidebar">
+  <nav class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+    <a href="{% url 'home' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <i class="bi bi-building-fill"></i>
+      <span class="fs-4">INF JMC</span>
+    </a>
+    <hr />
+   
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="{% url 'home' %}" class="nav-link text-white {% if title == 'Inicio' %} active {% endif %} "><i class="bi bi-house-door-fill"></i> &nbsp;Inicio</a>
+      </li>
+      <li>
+        <a href="{% url 'carreras' %}" class="nav-link text-white  {% if title == 'Carreras' %} active {% endif %} "><i class="bi bi-journal-code"></i> &nbsp;Carreras</a>
+      </li>
+      <li>
+        <a href="{% url 'docentes' %}" class="nav-link text-white  {% if title == 'Docentes' %} active {% endif %} "><i class="bi bi-people-fill"></i> &nbsp;Docentes</a>
+      </li>
+      <hr />
+      <li>
+        <a href="{% url 'admin:index' %}" class="nav-link text-white"><i class="bi bi-gear-fill"></i> &nbsp;Administrador</a>
+      </li>
+    </ul>
+  </nav>
+</nav>
