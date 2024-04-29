@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fondo{
+    background-color: #CCC;
+}
+
+#wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+}
+
+#ojo{
+    width: 260px;
+    height: 186px;
+}
+
