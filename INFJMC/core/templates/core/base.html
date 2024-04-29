@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}" />
+
+    <title> Informática SVM - {% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="p-5bg-body-tertiary rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">Informática Sede Viña del Mar</h1>
+              <h2 class="text-primary">{% block h2 %}{% endblock %}</h2>
+              <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus incidunt impedit, voluptatem voluptates rem sit laudantium eligendi iure quisquam aliquid. Rerum sed voluptatibus nisi pariatur veritatis ullam velit aut adipisci!</p>
+            
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Menú</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'carreras' %}">Carreras</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'docentes' %}">Profesores</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <footer class="footer">
+                <div class="container-fluid">
+                  <span class="text-muted">Taller de Lenguajes de Programación 2024</span>
+                </div>
+              </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

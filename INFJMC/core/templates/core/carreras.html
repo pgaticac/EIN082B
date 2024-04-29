@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informática SVM</title>
-</head>
-<body>
-    <h1>Carreras</h1>
-</body>
-</html>
+{% extends 'core/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+{% block h2 %}{{title}}{% endblock %}
+{% block content %}
+
+<table class="table table-hover table-fit">
+    <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for carrera in carreras %}
+        <tr>
+            <td>{{ carrera }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+  </table>
+
+{% endblock %}
