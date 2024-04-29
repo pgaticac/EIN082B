@@ -1,0 +1,11 @@
+#uno,#dos,#tres{
+    height: 50vh;
+}
+
+#uno{ background-color:#CE2D4F ;}
+#dos{ background-color:#4056F4 ;}
+#tres{ background-color:#CEBBC9 ;}
+
+.navbar{
+    background-color: #85D4B7;
+}
