@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+{% comment %} {% block h2 %}{{title}}{% endblock %} {% endcomment %}
+
+{% block content %}
+<h2>Contáctanos</h2>
+
+<form action="{% url 'nuevo_mensaje' %}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="txtNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="txtNombre" name="txtNombre">
+      </div>
+    <div class="mb-3">
+        <label for="txtEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="nombre@ejemplo.com">
+      </div>
+      <div class="mb-3">
+        <label for="cboTipo" class="form-label">Tipo</label>
+        <select class="form-select" aria-label="Default select example" id="cboTipo" name="cboTipo">
+            <option selected>Selecciona una opción</option>
+            <option value="0">Sugerencias</option>
+            <option value="1">Consulta</option>
+            <option value="2">Oferta Laboral</option>
+            <option value="3">Oferta Práctica</option>
+          </select>
+      </div>
+      <div class="mb-3">
+        <label for="txtAsunto" class="form-label">Asunto</label>
+        <input type="text" class="form-control" id="txtAsunto" name="txtAsunto">
+      </div>
+      <div class="mb-3">
+        <label for="txtMensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="txtMensaje" name="txtMensaje" rows="3"></textarea>
+      </div>
+      <input class="btn btn-primary" type="submit" value="Enviar">
+
+</form>
+{% endblock %}

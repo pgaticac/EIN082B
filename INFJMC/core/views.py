@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Mensaje
 
 def home(request):
     title = "Inicio"
@@ -36,3 +37,53 @@ def docentes(request):
         "title":title,
     }
     return render(request, 'core/docentes.html',data)
+
+def contacto(request):
+    if(request.POST):
+        #capturar datos desde el formulario
+        nombre = request.POST['txtNombre']
+        email = request.POST['txtEmail']
+        tipo = request.POST['cboTipo']
+        asunto = request.POST['txtAsunto']
+        texto = request.POST['txtMensaje']
+
+        #validaciones de reglas de negocio
+
+        #construir y cargar el objeto con los datos del form
+        mensaje = Mensaje()
+        mensaje.nombre = nombre
+        mensaje.email = email
+        mensaje.tipo = tipo
+        mensaje.asunto = asunto
+        mensaje.texto = texto
+
+        #guardar cambios en la base de datos
+        mensaje.save()
+    return render(request, 'core/contacto.html')
+
+def nuevo_mensaje(request):
+    if(request.POST):
+        #capturar datos desde el formulario
+        nombre = request.POST["txtNombre"]
+        email = request.POST['txtEmail']
+        tipo = request.POST['cboTipo']
+        asunto = request.POST['txtAsunto']
+        texto = request.POST['txtMensaje']
+
+        #validaciones de reglas de negocio
+
+        #construir y cargar el objeto con los datos del form
+        mensaje = Mensaje()
+        mensaje.nombre = nombre
+        mensaje.email = email
+        mensaje.tipo = tipo
+        mensaje.asunto = asunto
+        mensaje.texto = texto
+
+        #guardar cambios en la base de datos
+        mensaje.save()
+        
+    return render(request, 'core/contacto.html')
+        
+   
+   
