@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Mensaje
+from .models import Mensaje, Profesor
+import requests  #pip install requests
+import json
 
 def home(request):
     title = "Inicio"
@@ -32,9 +34,28 @@ def carreras(request):
 def docentes(request):
     #return HttpResponse('<h1>Docentes</h1>')
     title = "Profesores"
+    
+    #obtener la data desde API
+    response = requests.get('https://666da9297a3738f7caccf886.mockapi.io/inf/docentes')
+
+    #transformar data a JSON
+    profesoresJSON = response.json()
+
+    #Crear lista de profesores desde la data JSON
+    profesores = list()
+
+    for p in profesoresJSON:
+        profesor = Profesor()
+        profesor.nombre = p['nombre']
+        profesor.imagen_url = p['avatar']
+        profesor.especialidad = p['especialidad']
+        profesor.save()
+        profesores.append(profesor)
+
 
     data = {
         "title":title,
+        "profesores" : profesores
     }
     return render(request, 'core/docentes.html',data)
 

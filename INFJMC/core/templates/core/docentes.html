@@ -4,4 +4,19 @@
 {% block h2 %}{{title}}{% endblock %}
 {% block content %}
 
+<div class="row">
+  {% for profe in profesores %}
+    <div class="col mb-2">
+          <div class="card" style="width: 18rem;">
+            <img src="{{profe.imagen_url}}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{ profe.nombre }}</h5>
+              <p class="card-text">{{profe.especialidad}}</p>
+              <a href="#" class="btn btn-primary">Contactar</a>
+            </div>
+          </div>
+    </div>
+  {% endfor %}
+</div>
+
 {% endblock %}
