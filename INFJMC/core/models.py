@@ -1,6 +1,14 @@
 from django.db import models
 
 #Class Carrera
+class Carrera(models.Model):
+    codigo = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=80)
+    duracion = models.IntegerField()
+
+    def __str__(self) -> str:
+       return self.nombre
+
 
 
 #Class Profesor
