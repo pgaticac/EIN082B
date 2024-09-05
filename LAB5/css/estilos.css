@@ -1,0 +1,19 @@
+header{
+    background-color: #dbdbdb;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url('../img/habitacion.jpg');
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position-y: -35vh;
+    color: #fff;
+}
+
+#slogan{
+    box-sizing: border-box;
+    height: 20vh;
+    border-bottom: solid 1px #FFF;
+    text-align: center;
+    font-size: smaller;
+}
