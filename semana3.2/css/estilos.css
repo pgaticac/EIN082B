@@ -1,48 +1,41 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
 }
 
-#miCapa{
-    background-color: aqua;
-    width: 100vw;
-    height: 50vh;
-    padding-top: 5vh;
-    padding-left: 5vw;
-    box-sizing: border-box;
-}
-
-#menu{
-    width: 100vw;
-    height: 10vh;
-    background-color: blue;
+#unDiv{
+    width: 50vw;
+    height: 40vw;
+    background-color: blueviolet;
 }
 
 #uno, #dos, #tres, #cuatro{
     box-sizing: border-box;
     width: 200px;
     height: 200px;
+    padding-top: 75px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10vh;
+    font-size: 50px;
     text-align: center;
-    padding-top: 40px;
     float:left;
 }
 
-
 #uno{
-    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    background-color: #17C3B2;
 }
 
 #dos{
-    background-color: yellow;
+    background-color: #FFCB77;
 }
 
 #tres{
-    background-color: greenyellow;
+    background-color: #FE6D73;
     clear: both;
 }
 
 #cuatro{
-    background-color: orange;
+    background-color: #227C9D;
+    clear: both;
 }
