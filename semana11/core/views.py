@@ -12,10 +12,22 @@ def home(request):
 
 def carreras(request):
     titulo = "Carreras"
+        
+    if (request.POST):
+        #capturar los datos desde el form
+        codigo = request.POST["codigo"]
+        nombre = request.POST["nombre"]
+        duracion = request.POST["duracion"]
+        
+        #Validaciones
+        
+        
+        
+        
+        nueva = Carrera(codigo=codigo,nombre=nombre,duracion=duracion)
+        nueva.save()    
+    
     carreras = Carrera.objects.all()
-    
-    
-    
     data = {
         "titulo":titulo,
         "carreras": carreras
