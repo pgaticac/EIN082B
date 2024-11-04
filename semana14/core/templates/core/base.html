@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+</head>
+<body>
+    <h1>{{ titulo }}</h1>
+
+    <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'carreras' %}">Carreras</a></li>
+        <li><a href="{% url 'profesores' %}">Profesores</a></li>
+        <li><a href="{% url 'admin:index' %}">Administrador</a></li>
+        <li><a href="http://elinf.usm.cl">Sitio Elinf</a></li>
+    </ul>
+    <hr>
+
+    {% block main %}
+
+    {% endblock %}
+
+</body>
+</html>

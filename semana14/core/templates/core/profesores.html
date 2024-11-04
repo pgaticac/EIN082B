@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+    <ul>
+       {% for carrera in carreras %}
+        <li>{{ carrera }}</li>
+       {% endfor %}
+    </ul>
+
+    <hr>
+    <h2>Mensaje a Profesor</h2>
+     <form method="POST" action="{% url "carreras" %}">
+        
+
+{% endblock %}
