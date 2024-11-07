@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Carrera
+from .models import Carrera, Profesor
+import requests
 
 # Create your views here.
 def home(request):
@@ -37,8 +37,25 @@ def carreras(request):
 
 def profesores(request):
     titulo = "Profesores"
+    
+    info = requests.get("https://666da9297a3738f7caccf886.mockapi.io/inf/docentes")
+    profesores = info.json()
+    
+    lista_profes = list()
+    
+    for p in profesores:
+        profesor = Profesor(
+            rut = p["id"],
+            nombre = p["nombre"],
+            titulo = p["especialidad"]
+        )
+        
+        lista_profes.append(profesor)
+    
+    
     data = {
         "titulo":titulo,
+        "profesores":lista_profes,
     
     }
     return render(request,'core/profesores.html',data)
