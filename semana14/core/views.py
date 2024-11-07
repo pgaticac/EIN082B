@@ -42,3 +42,4 @@ def profesores(request):
     
     }
     return render(request,'core/profesores.html',data)
+
