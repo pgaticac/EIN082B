@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+    <ul>
+       {% for carrera in carreras %}
+        <li>{{ carrera }}</li>
+       {% endfor %}
+    </ul>
+
+    <hr>
+    <h2>Nueva Carrera</h2>
+     <form method="POST" action="{% url "carreras" %}">
+        {% csrf_token %}
+        <label for="codigo" class="form-label">Código</label>
+        <input type="text" class="form-control" id="codigo" name="codigo" required>
+
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+
+        <label for="duracion" class="form-label">Duración</label>
+        <input type="number" class="form-control" id="duracion" name="duracion">
+        
+        <button type="submit" class="btn btn-primary">Crear</button>
+     </form>   
+
+{% endblock %}
